@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    #驱动类名称
+    driverClassName: com.mysql.cj.jdbc.Driver
+    #数据库连接的url
+    url: jdbc:mysql://localhost:3306/tlias
+    #连接数据库的用户名
+    username: root
+    #连接数据库的密码
+    password: root
+
+  servlet:
+    multipart:
+      #上传单个文件的大小
+      maxFileSize: 10MB
+      #一次上传文件的总大小
+      maxRequestSize: 100MB
+
+mybatis:
+  configuration:
+    #配置mybatis的日志, 指定输出到控制台
+    logImpl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #开启mybatis的驼峰命名自动映射开关 a_column ------> aCloumn
+    mapUnderscoreToCamelCase: true
+
+#阿里云oss配置
+#需要自己配置
+aliyun:
+  oss:
+    endpoint: 
+    accessKeyId:
+    accessKeySecret:
+    bucketName:
+
+
+  #spring事务管理日志
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
+
+
